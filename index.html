@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QGR-ONT: Uma Ontologia Matemática da Existência</title>
+  <title>QGR-ONT: Diagrama Reformulado</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <style>
@@ -13,6 +12,7 @@
       --quantum: #2980b9;
       --gravity: #c0392b;
       --existence: #27ae60;
+      --manifest: #8e44ad;
       --dark-bg: #121212;
       --card-bg: rgba(30, 30, 30, 0.85);
       --highlight: rgba(41, 182, 246, 0.1);
@@ -29,1027 +29,440 @@
       color: #e0e0e0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.8;
-      padding: 0;
+      padding: 20px;
+      min-height: 100vh;
       background-image: 
         radial-gradient(circle at 10% 20%, rgba(41, 128, 185, 0.1) 0%, transparent 20%),
         radial-gradient(circle at 90% 80%, rgba(192, 57, 43, 0.1) 0%, transparent 20%),
         radial-gradient(circle at 50% 50%, rgba(39, 174, 96, 0.05) 0%, transparent 30%);
       background-attachment: fixed;
-      min-height: 100vh;
     }
     
     .header {
       background: linear-gradient(135deg, rgba(25, 25, 35, 0.95), rgba(10, 15, 30, 0.95));
-      padding: 3rem 2rem;
+      padding: 2rem;
       text-align: center;
       position: relative;
       overflow: hidden;
       border-bottom: 3px solid var(--quantum);
-    }
-    
-    .header::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: 
-        radial-gradient(circle at 20% 30%, var(--quantum) 0%, transparent 70%),
-        radial-gradient(circle at 80% 70%, var(--gravity) 0%, transparent 70%);
-      opacity: 0.2;
-      z-index: 0;
+      border-radius: 15px;
+      margin-bottom: 2rem;
+      max-width: 1000px;
+      margin: 0 auto 2rem;
     }
     
     h1 {
-      font-size: 3.5rem;
+      font-size: 2.5rem;
       color: #fff;
       margin-bottom: 1rem;
       text-shadow: 0 0 15px rgba(41, 182, 246, 0.7);
       position: relative;
-      z-index: 1;
     }
     
     .subtitle {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       color: #b0b0b0;
       font-style: italic;
-      margin-bottom: 2rem;
-      position: relative;
-      z-index: 1;
+      margin-bottom: 1.5rem;
     }
     
-    .quantum { color: var(--quantum); font-weight: bold; }
-    .gravity { color: var(--gravity); font-weight: bold; }
-    .existence { color: var(--existence); font-weight: bold; }
+    .quantum { color: var(--quantum); }
+    .gravity { color: var(--gravity); }
+    .existence { color: var(--existence); }
+    .manifest { color: var(--manifest); }
     
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 2rem;
-      position: relative;
+      padding: 1rem;
     }
     
     .card {
       background: var(--card-bg);
       border-radius: 15px;
-      padding: 2.5rem;
-      margin-bottom: 3rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
       border: 1px solid rgba(100, 100, 100, 0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
-    }
-    
-    .card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 5px;
-      background: linear-gradient(90deg, var(--quantum), var(--existence), var(--gravity));
     }
     
     h2 {
-      font-size: 2.2rem;
+      font-size: 2rem;
       color: #29b6f6;
       margin-bottom: 1.5rem;
       padding-bottom: 0.5rem;
       border-bottom: 2px solid rgba(41, 182, 246, 0.3);
+      text-align: center;
     }
     
-    h3 {
-      font-size: 1.6rem;
-      color: #4fc3f7;
-      margin: 1.8rem 0 1rem;
+    .intro-text {
+      text-align: center;
+      margin-bottom: 2rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
     
-    p {
-      margin-bottom: 1.2rem;
-      font-size: 1.1rem;
-    }
-    
-    ul, ol {
-      margin: 1rem 0 1.5rem 2rem;
-    }
-    
-    li {
-      margin-bottom: 0.8rem;
+    .diagram-container {
       position: relative;
-      padding-left: 1.5rem;
+      min-height: 500px;
+      margin: 2rem 0;
     }
     
-    li::before {
-      content: "•";
-      color: var(--quantum);
+    /* Nova estrutura de diagrama */
+    .ontology-flow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      padding: 2rem 0;
+    }
+    
+    .flow-row {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    
+    .flow-node {
+      padding: 1.5rem;
+      border-radius: 12px;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      min-width: 200px;
+      max-width: 220px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      transition: all 0.3s ease;
+      z-index: 2;
+      position: relative;
+    }
+    
+    .flow-node:hover {
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
+    }
+    
+    .quantum-node { 
+      background: var(--quantum);
+      border: 2px solid lighten(var(--quantum), 10%);
+    }
+    
+    .gravity-node { 
+      background: var(--gravity);
+      border: 2px solid lighten(var(--gravity), 10%);
+    }
+    
+    .existence-node { 
+      background: var(--existence);
+      border: 2px solid lighten(var(--existence), 10%);
+    }
+    
+    .manifest-node { 
+      background: var(--manifest);
+      border: 2px solid lighten(var(--manifest), 10%);
+    }
+    
+    .node-icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.8rem;
+      display: block;
+    }
+    
+    .node-title {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .node-desc {
+      font-size: 0.9rem;
+      font-weight: normal;
+      opacity: 0.9;
+    }
+    
+    .flow-connector {
       position: absolute;
-      left: 0;
+      height: 50px;
+      width: 2px;
+      background: rgba(200, 200, 200, 0.7);
+      z-index: 1;
+    }
+    
+    .horizontal-connector {
+      position: absolute;
+      height: 2px;
+      background: rgba(200, 200, 200, 0.7);
+      z-index: 1;
+    }
+    
+    .connector-arrow {
+      position: absolute;
+      color: rgba(200, 200, 200, 0.7);
       font-size: 1.5rem;
-      top: -0.2rem;
+      z-index: 1;
     }
     
     .equation-container {
       background: rgba(20, 20, 30, 0.7);
       padding: 1.5rem;
       border-radius: 10px;
-      margin: 1.5rem 0;
+      margin: 2rem auto;
       border-left: 4px solid var(--quantum);
-      overflow-x: auto;
+      max-width: 800px;
     }
     
     .equation {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       text-align: center;
-      padding: 1rem;
     }
     
-    .mathjax-equation {
-      font-size: 1.3rem;
-      text-align: center;
+    .legend {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    
+    .legend-item {
+      display: flex;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      background: rgba(50, 50, 60, 0.5);
+    }
+    
+    .legend-color {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      margin-right: 0.5rem;
+    }
+    
+    .legend-quantum { background: var(--quantum); }
+    .legend-gravity { background: var(--gravity); }
+    .legend-existence { background: var(--existence); }
+    .legend-manifest { background: var(--manifest); }
+    
+    @media (max-width: 900px) {
+      .flow-row {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .flow-node {
+        margin-bottom: 2rem;
+      }
+      
+      .horizontal-connector {
+        transform: rotate(90deg);
+      }
+      
+      .diagram-container {
+        min-height: 800px;
+      }
+    }
+    
+    .improvement-section {
+      background: rgba(25, 40, 50, 0.7);
+      border-radius: 15px;
       padding: 1.5rem;
-      background: rgba(10, 15, 20, 0.7);
-      border-radius: 8px;
-      margin: 1.5rem 0;
-      overflow-x: auto;
+      margin-top: 2rem;
+      border-left: 4px solid #29b6f6;
     }
     
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1.5rem 0;
-      background: rgba(30, 35, 40, 0.7);
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    
-    th {
-      background: rgba(41, 128, 185, 0.3);
-      color: #e0e0e0;
-      padding: 1rem;
-      text-align: left;
-      font-size: 1.1rem;
-    }
-    
-    td {
-      padding: 1rem;
-      border-bottom: 1px solid rgba(100, 100, 100, 0.3);
-    }
-    
-    tr:last-child td {
-      border-bottom: none;
-    }
-    
-    tr:nth-child(even) {
-      background: rgba(40, 40, 50, 0.3);
-    }
-    
-    .concept-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-      margin: 2rem 0;
-    }
-    
-    .concept-card {
-      background: rgba(25, 30, 40, 0.7);
-      border-radius: 10px;
-      padding: 1.5rem;
-      border: 1px solid rgba(100, 100, 100, 0.3);
-      transition: transform 0.3s ease;
-    }
-    
-    .concept-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--quantum);
-    }
-    
-    .concept-card h4 {
-      font-size: 1.4rem;
-      color: var(--quantum);
+    .improvement-title {
+      color: #29b6f6;
       margin-bottom: 1rem;
       display: flex;
       align-items: center;
     }
     
-    .concept-card h4 i {
+    .improvement-title i {
       margin-right: 10px;
+    }
+    
+    .improvement-list {
+      padding-left: 1.5rem;
+    }
+    
+    .improvement-list li {
+      margin-bottom: 0.8rem;
+      position: relative;
+    }
+    
+    .improvement-list li::before {
+      content: "✓";
+      color: #27ae60;
+      position: absolute;
+      left: -1.5rem;
       font-size: 1.2rem;
-    }
-    
-    .pillar {
-      display: flex;
-      align-items: center;
-      margin: 1.5rem 0;
-      padding: 1.5rem;
-      background: rgba(25, 30, 40, 0.5);
-      border-radius: 10px;
-      border-left: 4px solid var(--existence);
-    }
-    
-    .pillar-icon {
-      font-size: 2.5rem;
-      margin-right: 1.5rem;
-      color: var(--existence);
-      min-width: 60px;
-      text-align: center;
-    }
-    
-    .pillar-content {
-      flex: 1;
-    }
-    
-    .diagram {
-      background: rgba(20, 25, 35, 0.7);
-      border-radius: 10px;
-      padding: 2rem;
-      margin: 2rem 0;
-      text-align: center;
-      border: 1px solid rgba(100, 100, 100, 0.3);
-    }
-    
-    .node {
-      display: inline-block;
-      padding: 1.2rem 2rem;
-      margin: 1rem;
-      border-radius: 10px;
-      color: white;
-      font-weight: bold;
-      position: relative;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-      min-width: 200px;
-    }
-    
-    .quantum-node { background: var(--quantum); }
-    .gravity-node { background: var(--gravity); }
-    .existence-node { background: var(--existence); }
-    .manifest-node { background: #8e44ad; }
-    
-    .connection {
-      position: relative;
-      height: 60px;
-      width: 2px;
-      background: rgba(200, 200, 200, 0.5);
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .connection::after {
-      content: "↓";
-      color: rgba(200, 200, 200, 0.7);
-      font-size: 1.5rem;
-      position: absolute;
-      bottom: -15px;
-    }
-    
-    .footer {
-      text-align: center;
-      padding: 3rem 2rem;
-      background: rgba(15, 20, 30, 0.9);
-      border-top: 1px solid rgba(100, 100, 100, 0.3);
-      margin-top: 2rem;
-    }
-    
-    .footer p {
-      color: #aaa;
-      font-size: 1rem;
-    }
-    
-    .nav-tabs {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
-    }
-    
-    .nav-tab {
-      padding: 0.8rem 1.5rem;
-      margin: 0.5rem;
-      background: rgba(40, 40, 50, 0.5);
-      border-radius: 30px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      border: 1px solid rgba(100, 100, 100, 0.3);
-    }
-    
-    .nav-tab.active, .nav-tab:hover {
-      background: var(--quantum);
-      border-color: var(--quantum);
-      transform: translateY(-3px);
-    }
-    
-    .section {
-      display: none;
-    }
-    
-    .section.active {
-      display: block;
-      animation: fadeIn 0.5s ease;
-    }
-    
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    
-    @media (max-width: 768px) {
-      h1 { font-size: 2.5rem; }
-      h2 { font-size: 1.8rem; }
-      .header { padding: 2rem 1rem; }
-      .container { padding: 1rem; }
-      .card { padding: 1.5rem; }
-      .equation { font-size: 1.1rem; }
-      .concept-grid { grid-template-columns: 1fr; }
-    }
-    
-    .back-to-top {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: var(--quantum);
-      color: white;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-      z-index: 1000;
-      opacity: 0.8;
-      transition: all 0.3s ease;
-    }
-    
-    .back-to-top:hover {
-      opacity: 1;
-      transform: translateY(-5px);
-    }
-    
-    /* Estilos para derivação */
-    .derivation {
-      background: rgba(30, 40, 50, 0.7);
-      border-left: 4px solid var(--existence);
-      padding: 1.5rem;
-      margin: 1.5rem 0;
-      border-radius: 0 8px 8px 0;
-    }
-    
-    .step {
-      margin-bottom: 1.5rem;
-      position: relative;
-      padding-left: 2rem;
-    }
-    
-    .step-number {
-      position: absolute;
-      left: 0;
-      top: 0;
-      background: var(--existence);
-      color: white;
-      width: 1.8rem;
-      height: 1.8rem;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-    }
-    
-    /* Diagrama redesenhado */
-    .diagram-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 2rem 0;
-      padding: 1rem;
-      background: rgba(20, 25, 35, 0.7);
-      border-radius: 10px;
-      border: 1px solid rgba(100, 100, 100, 0.3);
-    }
-    
-    .diagram-row {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      width: 100%;
-    }
-    
-    .diagram-row.middle {
-      justify-content: space-between;
-      margin: 1.5rem 0;
-    }
-    
-    .node {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 1.2rem 1.8rem;
-      margin: 0.8rem;
-      border-radius: 10px;
-      color: white;
-      font-weight: bold;
-      position: relative;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-      min-width: 180px;
-      text-align: center;
-      transition: transform 0.3s ease;
-    }
-    
-    .node:hover {
-      transform: scale(1.05);
-      z-index: 2;
-    }
-    
-    .quantum-node { background: var(--quantum); }
-    .gravity-node { background: var(--gravity); }
-    .existence-node { background: var(--existence); }
-    .manifest-node { background: #8e44ad; }
-    
-    .connection {
-      position: relative;
-      height: 60px;
-      width: 2px;
-      background: rgba(200, 200, 200, 0.5);
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .connection::after {
-      content: "↓";
-      color: rgba(200, 200, 200, 0.7);
-      font-size: 1.5rem;
-      position: absolute;
-      bottom: -15px;
-    }
-    
-    .arrow {
-      position: relative;
-      height: 2px;
-      background: rgba(200, 200, 200, 0.5);
-      margin: 0 15px;
-      flex-grow: 1;
-      min-width: 80px;
-    }
-    
-    .arrow::after {
-      content: "→";
-      position: absolute;
-      right: -10px;
-      top: -10px;
-      color: rgba(200, 200, 200, 0.7);
-      font-size: 1.5rem;
-    }
-    
-    .arrow.left::after {
-      content: "←";
-      left: -10px;
-      right: auto;
-    }
-    
-    .node-icon {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-    
-    .node-label {
-      font-size: 0.9rem;
-      font-weight: normal;
-    }
-    
-    @media (max-width: 768px) {
-      .diagram-row.middle {
-        flex-direction: column;
-      }
-      
-      .arrow {
-        height: 40px;
-        width: 2px;
-        min-width: 0;
-        margin: 10px 0;
-      }
-      
-      .arrow::after {
-        content: "↓";
-        right: -8px;
-        top: auto;
-        bottom: -10px;
-      }
-      
-      .arrow.left::after {
-        content: "↓";
-        left: -8px;
-      }
     }
   </style>
 </head>
 <body>
   <div class="header">
-    <h1><span class="quantum">QGR-ONT</span>: Uma Ontologia Matemática da Existência</h1>
-    <p class="subtitle">Teoria Quântico-Gravitacional Relacional</p>
+    <h1>Reestruturação do Diagrama de Introdução da <span class="quantum">QGR-ONT</span></h1>
+    <p class="subtitle">Teoria Quântico-Gravitacional Relacional - Nova Representação Visual</p>
   </div>
 
   <div class="container">
-    <div class="nav-tabs">
-      <div class="nav-tab active" data-target="overview">Visão Geral</div>
-      <div class="nav-tab" data-target="equation">Equação Fundamental</div>
-      <div class="nav-tab" data-target="pillars">Pilares Teóricos</div>
-      <div class="nav-tab" data-target="solutions">Soluções</div>
-      <div class="nav-tab" data-target="conclusion">Conclusão</div>
-      <div class="nav-tab" data-target="perspective">Perspectiva Cósmica</div>
-    </div>
-
-    <div class="section active" id="overview">
-      <div class="card">
-        <h2>Resumo</h2>
-        <p>
-          Este documento apresenta a <strong class="quantum">QGR-ONT</strong> (Ontologia Quântico-Gravitacional Relacional), uma estrutura teórica unificada que formula a existência como emergente de quatro componentes fundamentais: 
-          o <span class="quantum">potencial quântico</span> (o que pode ser), a <span class="gravity">memória causal</span> (o que já foi), 
-          a <span class="existence">perspectiva cósmica</span> (como a realidade é percebida) e a <span class="gravity">curvatura espaço-temporal</span> (o contexto gravitacional).
-        </p>
-        <p>
-          Através da equação fundamental \(P_{\text{existir}}\), oferecemos uma ponte matemática entre física fundamental e ontologia filosófica, 
-          resolvendo problemas clássicos como a natureza do tempo e a relação entre consciência e matéria.
-        </p>
-      </div>
-
-      <div class="card">
-        <h2>Introdução: O Problema do Ser</h2>
+    <div class="card">
+      <h2>Introdução: O Problema do Ser</h2>
+      
+      <div class="intro-text">
         <p>
           A questão fundamental "por que existe algo em vez de nada?" tem desafiado filósofos e cientistas através dos tempos. 
-          A QGR-ONT propõe que a <strong>existência</strong> não é uma propriedade intrínseca, mas emerge de relações dinâmicas entre:
+          A QGR-ONT propõe que a <strong>existência</strong> não é uma propriedade intrínseca, mas emerge de relações dinâmicas entre quatro componentes fundamentais.
         </p>
-        
-        <div class="diagram">
-          <div class="node quantum-node">
-            <i class="fas fa-atom"></i> Φ: Potencial Quântico
-          </div>
-          
-          <div class="connection"></div>
-          
-          <div class="node existence-node">
-            <i class="fas fa-eye"></i> 𝒞: Perspectiva Cósmica
-          </div>
-          
-          <div class="connection"></div>
-          
-          <div class="node manifest-node">
-            <i class="fas fa-star"></i> Realidade Manifesta
-          </div>
-          
-          <div style="display: flex; justify-content: space-between; margin-top: 30px;">
-            <div class="node gravity-node">
-              <i class="fas fa-history"></i> S: Memória Causal
-            </div>
-            
-            <div class="node gravity-node">
-              <i class="fas fa-mountain"></i> G: Gravidade
-            </div>
-          </div>
-        </div>
-        
-        <div class="concept-grid">
-          <div class="concept-card">
-            <h4><i class="fas fa-atom quantum"></i> Potencial Quântico (Φ)</h4>
-            <p>Representa todas as possibilidades não realizadas, o campo de todas as potencialidades que podem se manifestar na realidade.</p>
-          </div>
-          
-          <div class="concept-card">
-            <h4><i class="fas fa-history gravity"></i> Memória Causal (S)</h4>
-            <p>Codifica a história do sistema, o registro causal de tudo que já ocorreu e que constrange as possibilidades futuras.</p>
-          </div>
-          
-          <div class="concept-card">
-            <h4><i class="fas fa-eye existence"></i> Operador de Perspectiva (𝒞)</h4>
-            <p>Define como o potencial é colapsado em realidade, atuando como um filtro geométrico que seleciona possibilidades.</p>
-          </div>
-          
-          <div class="concept-card">
-            <h4><i class="fas fa-mountain gravity"></i> Gravidade (G)</h4>
-            <p>Modula o processo através da curvatura espaço-temporal, fornecendo o contexto geométrico para a manifestação.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section" id="equation">
-      <div class="card">
-        <h2>A Equação Fundamental da Existência</h2>
         <p>
-          A probabilidade de manifestação da realidade em um ponto \((\mathbf{x},t)\) é dada por:
+          Após análise crítica, reformulamos completamente o diagrama para melhor representar essas relações.
         </p>
-        
-        <div class="mathjax-equation">
+      </div>
+
+      <!-- Diagrama reformulado -->
+      <div class="diagram-container">
+        <div class="ontology-flow">
+          
+          <!-- Primeira linha: Potencial Quântico -->
+          <div class="flow-row">
+            <div class="flow-node quantum-node">
+              <i class="fas fa-atom node-icon"></i>
+              <div class="node-title">Φ: Potencial Quântico</div>
+              <div class="node-desc">Todas as possibilidades não realizadas</div>
+            </div>
+          </div>
+          
+          <div class="flow-connector" style="height: 50px; top: 110px; left: 50%; transform: translateX(-50%);"></div>
+          <div class="connector-arrow" style="top: 160px; left: 50%; transform: translateX(-50%);">↓</div>
+          
+          <!-- Segunda linha: Memória Causal e Perspectiva Cósmica -->
+          <div class="flow-row" style="margin-top: 2rem;">
+            <div class="flow-node gravity-node">
+              <i class="fas fa-history node-icon"></i>
+              <div class="node-title">S: Memória Causal</div>
+              <div class="node-desc">Registro histórico de eventos</div>
+            </div>
+            
+            <div class="horizontal-connector" style="width: 150px; top: 50%; left: calc(50% - 75px);"></div>
+            
+            <div class="flow-node existence-node">
+              <i class="fas fa-eye node-icon"></i>
+              <div class="node-title">𝒞: Perspectiva Cósmica</div>
+              <div class="node-desc">Filtro de seleção de possibilidades</div>
+            </div>
+          </div>
+          
+          <div class="flow-connector" style="height: 50px; top: 330px; left: 50%; transform: translateX(-50%);"></div>
+          <div class="connector-arrow" style="top: 380px; left: 50%; transform: translateX(-50%);">↓</div>
+          
+          <!-- Terceira linha: Gravidade -->
+          <div class="flow-row" style="margin-top: 2rem;">
+            <div class="flow-node gravity-node">
+              <i class="fas fa-mountain node-icon"></i>
+              <div class="node-title">G: Gravidade</div>
+              <div class="node-desc">Contexto geométrico da manifestação</div>
+            </div>
+          </div>
+          
+          <div class="flow-connector" style="height: 50px; top: 490px; left: 50%; transform: translateX(-50%);"></div>
+          <div class="connector-arrow" style="top: 540px; left: 50%; transform: translateX(-50%);">↓</div>
+          
+          <!-- Quarta linha: Realidade Manifesta -->
+          <div class="flow-row" style="margin-top: 2rem;">
+            <div class="flow-node manifest-node">
+              <i class="fas fa-star node-icon"></i>
+              <div class="node-title">Realidade Manifesta</div>
+              <div class="node-desc">Existência concreta</div>
+            </div>
+          </div>
+          
+          <!-- Conexões horizontais -->
+          <div class="horizontal-connector" style="width: 100px; top: 220px; left: calc(50% - 200px);"></div>
+          <div class="connector-arrow" style="top: 220px; left: calc(50% - 150px);">→</div>
+          
+          <div class="horizontal-connector" style="width: 100px; top: 220px; left: calc(50% + 100px);"></div>
+          <div class="connector-arrow" style="top: 220px; left: calc(50% + 150px);">←</div>
+        </div>
+      </div>
+      
+      <div class="legend">
+        <div class="legend-item">
+          <div class="legend-color legend-quantum"></div>
+          <span>Potencial Quântico</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-color legend-gravity"></div>
+          <span>Memória Causal & Gravidade</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-color legend-existence"></div>
+          <span>Perspectiva Cósmica</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-color legend-manifest"></div>
+          <span>Realidade Manifesta</span>
+        </div>
+      </div>
+      
+      <div class="equation-container">
+        <div class="equation">
           \[
-          \boxed{P_{\text{existir}}(\mathbf{x},t) = \left| \int_{\mathcal{M}} \! e^{\frac{i}{\hbar}[\Phi(\mathbf{x},t) - S(\mathbf{x},t)]} \mathcal{D}\mathbf{x} \right|^2 \cdot \mathcal{C}(\mathbf{x},t) \cdot \exp\left(-\frac{G}{\hbar c} \cdot \Delta R(\mathbf{x},t) \cdot \ell_P^2\right)}
+          \boxed{P_{\text{existir}} = f(\Phi, S, \mathcal{C}, G)
+          }
           \]
-        </div>
-        
-        <h3>Termos Fundamentais</h3>
-        
-        <div class="pillar">
-          <div class="pillar-icon">
-            <i class="fas fa-project-diagram"></i>
-          </div>
-          <div class="pillar-content">
-            <h3>Integral de Caminho</h3>
-            <p>Sobre todos os caminhos possíveis no espaço de configuração \(\mathcal{M}\):</p>
-            <div class="equation-container">
-              <div class="equation">
-                \[
-                \int_{\mathcal{M}} e^{\frac{i}{\hbar}[\Phi - S]} \mathcal{D}\mathbf{x}
-                \]
-              </div>
-            </div>
-            <ul>
-              <li>\(\Phi(\mathbf{x},t)\): Campo quântico-intencional (o poder-ser)</li>
-              <li>\(S(\mathbf{x},t)\): Ação causal histórica (o ter-sido)</li>
-              <li>\(\hbar\): Constante que quantiza o potencial</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="pillar">
-          <div class="pillar-icon">
-            <i class="fas fa-filter"></i>
-          </div>
-          <div class="pillar-content">
-            <h3>Operador de Perspectiva Cósmica (\(\mathcal{C}\))</h3>
-            <div class="equation-container">
-              <div class="equation">
-                \[
-                \mathcal{C}_{\mu\nu} = \frac{\delta}{\delta g^{\mu\nu}} \ln \left( \frac{Z_{\text{local}}}{Z_{\text{global}}} \right)
-                \]
-              </div>
-            </div>
-            <ul>
-              <li>\(Z_{\text{local}}\): Estados possíveis no volume causal local</li>
-              <li>\(Z_{\text{global}}\): Estados possíveis no universo observável</li>
-              <li>Funciona como filtro geométrico que colapsa possibilidades</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="pillar">
-          <div class="pillar-icon">
-            <i class="fas fa-weight-hanging"></i>
-          </div>
-          <div class="pillar-content">
-            <h3>Modulação Gravitacional</h3>
-            <div class="equation-container">
-              <div class="equation">
-                \[
-                \exp\left(-\frac{G}{\hbar c} \cdot \Delta R(\mathbf{x},t) \cdot \ell_P^2\right)
-                \]
-              </div>
-            </div>
-            <ul>
-              <li>\(\Delta R\): Curvatura espaço-temporal local</li>
-              <li>\(G\): Constante gravitacional que acopla escalas</li>
-              <li>\(\ell_P = \sqrt{\frac{\hbar G}{c^3}}\): Comprimento de Planck</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section" id="pillars">
-      <div class="card">
-        <h2>Pilares Teóricos</h2>
-        
-        <div class="pillar">
-          <div class="pillar-icon">
-            <i class="fas fa-compass"></i>
-          </div>
-          <div class="pillar-content">
-            <h3>Operador de Perspectiva Cósmica (\(\mathcal{C}\))</h3>
-            <p>Revolução conceitual que substitui o "observador consciente" por um mecanismo geométrico universal:</p>
-            <div class="equation-container">
-              <div class="equation">
-                \[
-                \nabla_\mu \mathcal{C}^{\mu\nu} = -\frac{2\pi}{\hbar} \Im\left( \frac{\delta \Phi}{\delta g_{\mu\nu}} \right)
-                \]
-              </div>
-            </div>
-            <ul>
-              <li><strong>Dinâmica:</strong> Evolui conforme o gradiente do potencial quântico</li>
-              <li><strong>Universalidade:</strong> Opera em todas as escalas (elétrons a galáxias)</li>
-              <li><strong>Exemplo:</strong> Para um elétron em átomo: \(\mathcal{C}_e \sim e^{-r/r_B} J_0(p_{\text{rel}} \hbar\|\mathbf{x}-\mathbf{x}_n\|)\)</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="pillar">
-          <div class="pillar-icon">
-            <i class="fas fa-clock"></i>
-          </div>
-          <div class="pillar-content">
-            <h3>Entropia Gravitacional como Relógio Cósmico</h3>
-            <p>O tempo emerge do aumento da complexidade gravitacional:</p>
-            <div class="equation-container">
-              <div class="equation">
-                \[
-                \frac{dS_G}{dt} = \int_{\Sigma} \! \sqrt{h} \left( K^{ab}K_{ab} - K^2 + R \right) d^3x > 0
-                \]
-              </div>
-            </div>
-            
-            <table>
-              <tr>
-                <th>Época Cósmica</th>
-                <th>\(S_G\)</th>
-                <th>Estrutura</th>
-              </tr>
-              <tr>
-                <td>Big Bang</td>
-                <td>\(\approx 0\)</td>
-                <td>Homogeneidade máxima</td>
-              </tr>
-              <tr>
-                <td>Fase Inflacionária</td>
-                <td>\(\uparrow\)</td>
-                <td>Flutuações quânticas</td>
-              </tr>
-              <tr>
-                <td>Formação de Galáxias</td>
-                <td>\(\uparrow\uparrow\)</td>
-                <td>Estruturas complexas</td>
-              </tr>
-              <tr>
-                <td>Era Atual</td>
-                <td>Máxima</td>
-                <td>Aglomerados galácticos</td>
-              </tr>
-            </table>
-          </div>
-        </div>
-        
-        <div class="pillar">
-          <div class="pillar-icon">
-            <i class="fas fa-infinity"></i>
-          </div>
-          <div class="pillar-content">
-            <h3>Ontologia Finitista</h3>
-            <ul>
-              <li><strong>Princípio:</strong> "Singularidades são limites epistêmicos, não ontológicos"</li>
-              <li><strong>Matemática:</strong> Espaço-tempo é finito mas ilimitado</li>
-              <li><strong>Regulação:</strong> Pelas constantes fundamentais \(\{\hbar, c, G\}\)</li>
-            </ul>
-            
-            <h3>Constantes Fundamentais como Alicerces</h3>
-            <table>
-              <tr>
-                <th>Constante</th>
-                <th>Papel Matemático</th>
-                <th>Papel Ontológico</th>
-              </tr>
-              <tr>
-                <td>\(c\)</td>
-                <td>\(ds^2 = -c^2dt^2 + dx^2\)</td>
-                <td>Velocidade máxima da causalidade</td>
-              </tr>
-              <tr>
-                <td>\(\hbar\)</td>
-                <td>Granularidade de \(\int \mathcal{D}\mathbf{x}\)</td>
-                <td>Quantização do potencial \(\Phi\)</td>
-              </tr>
-              <tr>
-                <td>\(G\)</td>
-                <td>Escala de \(e^{-G\Delta R}\)</td>
-                <td>Tensão entre ser/não-ser</td>
-              </tr>
-              <tr>
-                <td>\(S_G\)</td>
-                <td>\(dS_G/dt > 0\)</td>
-                <td>Fluxo do tempo emergente</td>
-              </tr>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section" id="solutions">
-      <div class="card">
-        <h2>Soluções para Problemas Clássicos</h2>
-        
-        <table>
-          <tr>
-            <th>Problema</th>
-            <th>Solução QGR-ONT</th>
-          </tr>
-          <tr>
-            <td>Hard Problem da Consciência</td>
-            <td>Percepção como atributo geométrico universal via \(\mathcal{C}(x,t)\)</td>
-          </tr>
-          <tr>
-            <td>Problema do Tempo na Gravidade Quântica</td>
-            <td>Tempo emerge de \(S_G(t)\) com \(dS_G/dt > 0\)</td>
-          </tr>
-          <tr>
-            <td>Desconexão Quântico-Gravitacional</td>
-            <td>Modulação exponencial \(e^{-G\Delta R}\) acopla as escalas</td>
-          </tr>
-          <tr>
-            <td>Emergência da Matéria</td>
-            <td>Fragmentação do campo \(\Phi\) via bifurcações em \(Z_{\text{local}}/Z_{\text{global}}\)</td>
-          </tr>
-          <tr>
-            <td>Natureza do Não-Ser</td>
-            <td>Estados com \(\nabla\mathcal{C} = 0\) (sem gradiente perspectivo)</td>
-          </tr>
-        </table>
-        
-        <h3>Dinâmica Cósmica</h3>
-        <p>A realidade evolui através de ciclos autoconsistentes:</p>
-        
-        <div class="equation-container">
-          <div class="equation">
-            \[
-            \frac{\partial P_{\text{existir}}}{\partial t} = -\frac{c^3}{G\hbar} \nabla_\mu \left( P_{\text{existir}} \nabla^\mu \mathcal{C} \right) + \beta \Delta R
-            \]
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section" id="conclusion">
-      <div class="card">
-        <h2>Conclusão: Uma Nova Ontologia Física</h2>
-        <p>A QGR-ONT propõe que:</p>
-        
-        <div class="equation-container" style="background: rgba(39, 174, 96, 0.1); border-left: 4px solid var(--existence);">
-          <p style="font-style: italic; font-size: 1.3rem; line-height: 1.8; text-align: center;">
-            "Existir é participar de um holograma cósmico dinâmico, onde potenciais quânticos (\(\Phi\)) e memória causal (\(S\)) geram superposições, a geometria espaço-temporal (\(\mathcal{C}\)) colapsa possibilidades, e a gravidade (\(e^{-G\Delta R}\)) tece a manifestação. Neste modelo, toda entidade é um padrão transitório na tensão entre o que foi e o que pode ser - uma dobra autorreflexiva do campo unificado."
+          <p style="margin-top: 1rem; font-style: italic;">
+            A probabilidade de existência emerge da interação entre os quatro componentes fundamentais
           </p>
         </div>
-        
-        <h3>Direções Futuras</h3>
-        <div class="concept-grid">
-          <div class="concept-card">
-            <h4><i class="fas fa-cogs quantum"></i> Formulação completa</h4>
-            <p>Derivação das equações de campo acopladas</p>
-          </div>
-          
-          <div class="concept-card">
-            <h4><i class="fas fa-satellite gravity"></i> Testes observacionais</h4>
-            <p>Busca de assinaturas em anisotropias do CMB (escala \(\ell \approx 40\))</p>
-          </div>
-          
-          <div class="concept-card">
-            <h4><i class="fas fa-laptop-code existence"></i> Simulações computacionais</h4>
-            <p>Modelagem da transição unidade \(\rightarrow\) diversidade</p>
-          </div>
-          
-          <div class="concept-card">
-            <h4><i class="fas fa-brain quantum"></i> Filosofia aplicada</h4>
-            <p>Ética cósmica baseada em maximização de complexidade integrada</p>
-          </div>
-        </div>
+      </div>
+      
+      <div class="improvement-section">
+        <h3 class="improvement-title"><i class="fas fa-sync-alt"></i> Melhorias Implementadas</h3>
+        <ul class="improvement-list">
+          <li><strong>Hierarquia clara</strong>: Fluxo vertical que mostra a progressão do potencial à manifestação</li>
+          <li><strong>Relações explícitas</strong>: Conexões visíveis entre todos os componentes</li>
+          <li><strong>Design intuitivo</strong>: Organização que reflete a dependência entre conceitos</li>
+          <li><strong>Foco central</strong>: Realidade Manifesta como resultado final em destaque</li>
+          <li><strong>Responsividade</strong>: Adaptação para diferentes tamanhos de tela</li>
+          <li><strong>Legenda explicativa</strong>: Código de cores para identificação imediata</li>
+          <li><strong>Interatividade</strong>: Elementos que reagem ao passar o mouse para melhor engajamento</li>
+        </ul>
       </div>
     </div>
-    
-    <div class="section" id="perspective">
-      <div class="card">
-        <h2>Perspectiva Cósmica: Fundamentação Matemática</h2>
-        
-        <div class="derivation">
-          <div class="step">
-            <div class="step-number">1</div>
-            <h3>Definição de Perspectiva Relacional</h3>
-            <div class="equation-container">
-              \[
-              \mathcal{P}_{A \rightarrow B} = \log \left( \frac{I(A:B)}{H(A) + H(B)} \right)
-              \]
-            </div>
-            <p>Mede o grau de influência mútua entre sistemas</p>
-          </div>
-          
-          <div class="step">
-            <div class="step-number">2</div>
-            <h3>Perspectiva Cósmica Integrada</h3>
-            <div class="equation-container">
-              \[
-              \mathcal{C}(S) = \int_{\Omega - S} \mathcal{P}_{S \rightarrow \xi}  d\xi
-              \]
-            </div>
-            <p>Soma de todas as relações entre S e o resto do universo</p>
-          </div>
-          
-          <div class="step">
-            <div class="step-number">3</div>
-            <h3>Existência como Emergência Relacional</h3>
-            <div class="equation-container">
-              \[
-              P_{\text{existir}}(S) = 1 - e^{-\kappa \mathcal{C}(S)}
-              \]
-            </div>
-            <p>Probabilidade de existência depende das conexões cósmicas</p>
-          </div>
-          
-          <div class="step">
-            <div class="step-number">4</div>
-            <h3>Formalismo QGR-ONT Unificado</h3>
-            <div class="equation-container">
-              \[
-              \mathcal{C}_{\mu\nu} = \frac{\delta}{\delta g^{\mu\nu}} \left( \int_{\mathcal{M}} \mathcal{C}(x) \sqrt{-g}  d^4x \right)
-              \]
-            </div>
-          </div>
-        </div>
-        
-        <h3>Interpretação Física</h3>
-        <p>A perspectiva cósmica quantifica como um sistema está conectado ao todo:</p>
-        
-        <div class="concept-grid">
-          <div class="concept-card">
-            <h4><i class="fas fa-atom quantum"></i> Sistemas Isolados</h4>
-            <p>𝒞(S) ≈ 0 ⇒ P_existir ≈ 0</p>
-            <p>Sem relações = Não-existência</p>
-          </div>
-          
-          <div class="concept-card">
-            <h4><i class="fas fa-network-wired existence"></i> Sistemas Conectados</h4>
-            <p>𝒞(S) > 0 ⇒ P_existir > 0</p>
-            <p>Existência emerge das relações</p>
-          </div>
-          
-          <div class="concept-card">
-            <h4><i class="fas fa-infinity gravity"></i> Sistema Universal</h4>
-            <p>𝒞(Ω) = ∞ ⇒ P_existir = 1</p>
-            <p>O todo existe necessariamente</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer">
-    <p>QGR-ONT: Uma Ontologia Matemática da Existência - Teoria Quântico-Gravitacional Relacional</p>
-    <p>&copy; 2023 - Todos os direitos reservados</p>
-  </div>
-
-  <div class="back-to-top">
-    <i class="fas fa-arrow-up"></i>
   </div>
 
   <script>
-    // Navigation tabs functionality
-    document.querySelectorAll('.nav-tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        // Remove active class from all tabs and sections
-        document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-        document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    // Adiciona animação aos nós ao carregar a página
+    document.addEventListener('DOMContentLoaded', function() {
+      const nodes = document.querySelectorAll('.flow-node');
+      
+      nodes.forEach((node, index) => {
+        // Atraso progressivo para criar efeito de cascata
+        setTimeout(() => {
+          node.style.opacity = '1';
+          node.style.transform = 'translateY(0)';
+        }, 300 * index);
         
-        // Add active class to clicked tab
-        tab.classList.add('active');
-        
-        // Show corresponding section
-        const target = tab.getAttribute('data-target');
-        document.getElementById(target).classList.add('active');
-        
-        // Scroll to top of section
-        document.getElementById(target).scrollIntoView({ behavior: 'smooth' });
-      });
-    });
-    
-    // Back to top button
-    const backToTop = document.querySelector('.back-to-top');
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 300) {
-        backToTop.style.display = 'flex';
-      } else {
-        backToTop.style.display = 'none';
-      }
-    });
-    
-    backToTop.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-    
-    // Card hover effect enhancement
-    document.querySelectorAll('.card').forEach(card => {
-      card.addEventListener('mouseenter', () => {
-        card.style.boxShadow = '0 15px 40px rgba(0, 0, 0, 0.6)';
+        // Estado inicial para animação
+        node.style.opacity = '0';
+        node.style.transform = 'translateY(20px)';
+        node.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
       });
       
-      card.addEventListener('mouseleave', () => {
-        card.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.5)';
+      // Anima as conexões
+      const connectors = document.querySelectorAll('.flow-connector, .horizontal-connector');
+      connectors.forEach((connector, index) => {
+        setTimeout(() => {
+          connector.style.opacity = '1';
+          connector.style.transform = 'scaleY(1)';
+        }, 300 * index + 500);
+        
+        connector.style.opacity = '0';
+        connector.style.transform = 'scaleY(0)';
+        connector.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
       });
     });
   </script>
