@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>QGR-ONT: Uma Ontologia Matemática da Existência</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <style>
@@ -359,6 +360,51 @@
       to { opacity: 1; transform: translateY(0); }
     }
     
+    /* Assinatura elegante para Antônio Cherubim */
+    .signature-container {
+      text-align: center;
+      margin: 2rem 0;
+      padding: 2rem;
+      position: relative;
+    }
+    
+    .signature {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3.5rem;
+      color: #29b6f6;
+      display: inline-block;
+      position: relative;
+      padding: 0 2rem;
+      margin: 1rem 0;
+      text-shadow: 0 0 10px rgba(41, 182, 246, 0.5);
+      background: linear-gradient(to right, transparent, rgba(41, 182, 246, 0.1), transparent);
+    }
+    
+    .signature::before,
+    .signature::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 50px;
+      height: 2px;
+      background: linear-gradient(to right, transparent, #29b6f6, transparent);
+    }
+    
+    .signature::before {
+      right: 100%;
+    }
+    
+    .signature::after {
+      left: 100%;
+    }
+    
+    .author-title {
+      font-size: 1.2rem;
+      color: #aaa;
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+    
     @media (max-width: 768px) {
       h1 { font-size: 2.5rem; }
       h2 { font-size: 1.8rem; }
@@ -367,6 +413,7 @@
       .card { padding: 1.5rem; }
       .equation { font-size: 1.1rem; }
       .concept-grid { grid-template-columns: 1fr; }
+      .signature { font-size: 2.5rem; }
     }
     
     .back-to-top {
@@ -421,6 +468,12 @@
           Através da equação fundamental \(P_{\text{existir}}\), oferecemos uma ponte matemática entre física fundamental e ontologia filosófica, 
           resolvendo problemas clássicos como a natureza do tempo e a relação entre consciência e matéria.
         </p>
+        
+        <!-- Assinatura na seção de resumo -->
+        <div class="signature-container">
+          <div class="signature">Antônio Cherubim</div>
+          <div class="author-title">Autor e Pesquisador da QGR-ONT</div>
+        </div>
       </div>
 
       <div class="card">
@@ -560,6 +613,12 @@
             </ul>
           </div>
         </div>
+        
+        <!-- Assinatura na seção de equação -->
+        <div class="signature-container">
+          <div class="signature">Antônio Cherubim</div>
+          <div class="author-title">Desenvolvedor da Teoria QGR-ONT</div>
+        </div>
       </div>
     </div>
 
@@ -676,6 +735,12 @@
             </table>
           </div>
         </div>
+        
+        <!-- Assinatura na seção de pilares -->
+        <div class="signature-container">
+          <div class="signature">Antônio Cherubim</div>
+          <div class="author-title">Teórico em Física Quântica e Ontologia</div>
+        </div>
       </div>
     </div>
 
@@ -757,8 +822,10 @@
           </div>
         </div>
         
-        <div style="text-align: center; margin-top: 2rem; font-size: 1.2rem; font-style: italic;">
-          <p>"A QGR-ONT transforma 'Por que existe algo?' em 'Como \(\Phi\), \(S\), \(\mathcal{C}\) e \(G\) negociam a emergência do ser?'"</p>
+        <!-- Assinatura principal na conclusão -->
+        <div class="signature-container">
+          <div class="signature">Antônio Cherubim</div>
+          <div class="author-title">Criador da Teoria QGR-ONT</div>
         </div>
       </div>
     </div>
@@ -766,6 +833,7 @@
 
   <div class="footer">
     <p>QGR-ONT: Uma Ontologia Matemática da Existência - Teoria Quântico-Gravitacional Relacional</p>
+    <p>Desenvolvido por Antônio Cherubim</p>
     <p>&copy; 2023 - Todos os direitos reservados</p>
   </div>
 
