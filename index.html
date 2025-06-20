@@ -362,6 +362,95 @@
       border: 1px solid rgba(100, 100, 100, 0.2);
     }
     
+    /* Estilos adicionais para a nova seção Conceito */
+    .concept-section {
+      background: rgba(20, 25, 35, 0.7);
+      padding: 2rem;
+      border-radius: 15px;
+      margin: 2rem 0;
+      border-left: 4px solid var(--manifest);
+    }
+    
+    .concept-section h3 {
+      display: flex;
+      align-items: center;
+      margin-top: 0;
+      font-size: 1.8rem;
+      color: #8e44ad;
+      border-bottom: 2px solid rgba(142, 68, 173, 0.3);
+      padding-bottom: 0.5rem;
+    }
+    
+    .element-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    
+    .element-card {
+      flex: 1;
+      min-width: 300px;
+      background: rgba(25, 30, 40, 0.8);
+      border-radius: 10px;
+      padding: 2rem;
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+    }
+    
+    .element-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
+    
+    .element-card h4 {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: #4fc3f7;
+    }
+    
+    .element-card h4 i {
+      font-size: 2rem;
+      margin-right: 15px;
+    }
+    
+    .element-number {
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      background: var(--quantum);
+      border-radius: 50%;
+      text-align: center;
+      line-height: 35px;
+      margin-right: 10px;
+      font-weight: bold;
+    }
+    
+    .solution-list {
+      background: rgba(25, 30, 40, 0.7);
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-left: 4px solid var(--existence);
+    }
+    
+    .solution-list li {
+      margin-bottom: 0.8rem;
+      position: relative;
+      padding-left: 25px;
+    }
+    
+    .solution-list li:before {
+      content: "•";
+      color: var(--existence);
+      font-size: 1.5rem;
+      position: absolute;
+      left: 0;
+      top: -5px;
+    }
+    
     @media (max-width: 768px) {
       h1 { font-size: 2.5rem; }
       h2 { font-size: 1.8rem; }
@@ -371,6 +460,7 @@
       .equation { font-size: 1.1rem; }
       .concept-grid { grid-template-columns: 1fr; }
       .nav-tab { padding: 0.6rem 1.2rem; font-size: 0.9rem; }
+      .element-container { flex-direction: column; }
     }
   </style>
 </head>
@@ -383,12 +473,14 @@
   <div class="container">
     <div class="nav-tabs">
       <div class="nav-tab active" data-target="overview">Visão Geral</div>
+      <div class="nav-tab" data-target="concept">Conceito</div>
       <div class="nav-tab" data-target="equation">Equação Fundamental</div>
       <div class="nav-tab" data-target="formalization">Formalização</div>
       <div class="nav-tab" data-target="predictions">Previsões</div>
     </div>
 
     <div class="section active" id="overview">
+      <!-- Conteúdo existente da Visão Geral -->
       <div class="card">
         <h2>Resumo da Teoria</h2>
         <p>
@@ -488,7 +580,105 @@
       </div>
     </div>
 
+    <!-- NOVA SEÇÃO: CONCEITO -->
+    <div class="section" id="concept">
+      <div class="card">
+        <h2>Explicação Conceitual</h2>
+        
+        <div class="concept-section">
+          <p>
+            A <strong class="quantum">QGR-ONT</strong>, ou Teoria Quântico-Gravitacional Relacional Ontológica, propõe uma nova forma de pensarmos a existência e o universo. Em vez de vermos o cosmos como um conjunto de objetos separados, essa teoria sugere que tudo que existe surge das relações entre três elementos fundamentais:
+          </p>
+          
+          <div class="element-container">
+            <div class="element-card">
+              <h4><span class="element-number">1</span> <i class="fas fa-water quantum"></i> Potencial Quântico (Φ)</h4>
+              <p>É como um campo invisível que contém todas as possibilidades do que poderia existir. Imagine-o como um oceano de futuros possíveis, onde cada onda é um caminho que o universo poderia seguir.</p>
+              <div class="math-container">
+                \[
+                \hat{\Phi}(\mathbf{x}) = \sum_k \sqrt{\frac{\hbar \omega_k}{2}} \left[ \hat{a}_k f_k(\mathbf{x}) + \hat{a}_k^\dagger f_k^*(\mathbf{x}) \right]
+                \]
+              </div>
+            </div>
+            
+            <div class="element-card">
+              <h4><span class="element-number">2</span> <i class="fas fa-book gravity"></i> Memória Causal (S)</h4>
+              <p>O universo não esquece. Tudo o que já aconteceu fica registrado de alguma forma. Essa "memória" do passado restringe e orienta o que pode acontecer depois. É como se o universo tivesse um diário que influencia os capítulos futuros.</p>
+              <div class="math-container">
+                \[
+                S = \int d^4x \sqrt{-g} \mathcal{L}_{\text{hist}}
+                \]
+              </div>
+            </div>
+            
+            <div class="element-card">
+              <h4><span class="element-number">3</span> <i class="fas fa-globe-americas existence"></i> Perspectiva Cósmica (𝒞)</h4>
+              <p>Essa é a parte mais poética: em vez de um observador externo (como um ser consciente que olha o universo), o próprio tecido do espaço-tempo funciona como um "operador de perspectiva". É como se o cosmos se observasse, escolhendo quais possibilidades se tornam realidade, de acordo com a forma como está curvado, estruturado, e com a história que carrega.</p>
+              <div class="math-container">
+                \[
+                \mathcal{C}_{\mu\nu} = \lim_{\epsilon \to 0^+} \frac{1}{\epsilon} \left[ \frac{Z_{\Lambda(\epsilon)}}{Z_{\Lambda(0)}} \right] g_{\mu\nu}
+                \]
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="concept-section">
+          <h3><i class="fas fa-mountain"></i> Gravidade e Manifestação</h3>
+          <p>
+            Tudo isso ocorre no palco da gravidade. O espaço-tempo, com suas curvas e dobras, não é só o cenário: ele participa ativamente de quais possibilidades se tornam reais. As regiões onde o espaço-tempo é mais curvado (como perto de estrelas e buracos negros) modulam mais fortemente o que pode ou não se manifestar.
+          </p>
+          <div class="math-container">
+            \[
+            e^{-G \cdot \Delta R(\mathbf{x},t)}
+            \]
+          </div>
+        </div>
+        
+        <div class="concept-section">
+          <h3><i class="fas fa-clock"></i> Seta do Tempo</h3>
+          <p>
+            Na QGR-ONT, o tempo não é uma linha que vai do passado para o futuro. O tempo é o aumento da complexidade, da organização e da memória gravitacional do universo. O "relógio cósmico" é o próprio crescimento da entropia gravitacional.
+          </p>
+        </div>
+        
+        <div class="concept-section">
+          <h3><i class="fas fa-project-diagram"></i> Filosofia Central</h3>
+          <p>
+            Tudo o que existe é relacional. Não existem "coisas" isoladas. Existir é estar em relação: entre o que pode ser, o que já foi e a forma como o universo se percebe e se curva.
+          </p>
+        </div>
+        
+        <div class="concept-section">
+          <h3><i class="fas fa-lightbulb"></i> Soluções para Problemas</h3>
+          <p>
+            Essa teoria, além de elegante matematicamente, propõe soluções para velhos problemas:
+          </p>
+          <div class="solution-list">
+            <ul>
+              <li><strong>Explica o "hard problem" da consciência</strong> como uma propriedade geométrica universal, não limitada a cérebros.</li>
+              <li><strong>Dá uma direção para o tempo</strong> sem precisar de um observador externo.</li>
+              <li><strong>Conecta o quântico e o gravitacional</strong> sem precisar de ajustes artificiais.</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="concept-section">
+          <h3><i class="fas fa-infinity"></i> Conclusão</h3>
+          <p>
+            No fundo, a QGR-ONT nos convida a pensar que o universo é uma rede viva de relações, onde a existência é o diálogo constante entre o possível, o realizado e o contexto que tudo envolve.
+          </p>
+          <div class="mathjax-equation">
+            \[
+            \boxed{\text{Existência} = \Phi \otimes S \otimes \mathcal{C}}
+            \]
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="section" id="equation">
+      <!-- Conteúdo existente da Equação Fundamental -->
       <div class="card">
         <h2>Equação Fundamental</h2>
         
@@ -546,6 +736,7 @@
     </div>
 
     <div class="section" id="formalization">
+      <!-- Conteúdo existente da Formalização -->
       <div class="card">
         <h2>Formalização Matemática</h2>
         
@@ -620,6 +811,7 @@
     </div>
 
     <div class="section" id="predictions">
+      <!-- Conteúdo existente das Previsões -->
       <div class="card">
         <h2>Previsões Testáveis</h2>
         
@@ -733,7 +925,7 @@
     });
     
     // Card hover effect enhancement
-    document.querySelectorAll('.card').forEach(card => {
+    document.querySelectorAll('.card, .element-card').forEach(card => {
       card.addEventListener('mouseenter', () => {
         card.style.boxShadow = '0 15px 40px rgba(0, 0, 0, 0.6)';
       });
@@ -757,7 +949,7 @@
       });
     }, observerOptions);
     
-    document.querySelectorAll('.pillar, .concept-card').forEach(el => {
+    document.querySelectorAll('.pillar, .concept-card, .element-card').forEach(el => {
       el.style.opacity = "0";
       el.style.transform = "translateY(20px)";
       el.style.transition = "opacity 0.5s ease, transform 0.5s ease";
