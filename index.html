@@ -266,32 +266,6 @@
       font-size: 1.2rem;
     }
     
-    .signature-container {
-      text-align: center;
-      margin: 2rem 0;
-      padding: 2rem;
-      position: relative;
-      border-top: 1px dashed rgba(100, 100, 100, 0.5);
-    }
-    
-    .signature {
-      font-family: 'Source Code Pro', monospace;
-      font-size: 2.5rem;
-      color: #29b6f6;
-      display: inline-block;
-      position: relative;
-      padding: 0 2rem;
-      margin: 1rem 0;
-      text-shadow: 0 0 10px rgba(41, 182, 246, 0.5);
-    }
-    
-    .author-title {
-      font-size: 1.1rem;
-      color: #aaa;
-      margin-top: 0.5rem;
-      font-style: italic;
-    }
-    
     .nav-tabs {
       display: flex;
       justify-content: center;
@@ -388,17 +362,6 @@
       border: 1px solid rgba(100, 100, 100, 0.2);
     }
     
-    .improvement-badge {
-      background: var(--existence);
-      color: white;
-      padding: 0.3rem 0.8rem;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      display: inline-block;
-      margin-left: 10px;
-      vertical-align: middle;
-    }
-    
     @media (max-width: 768px) {
       h1 { font-size: 2.5rem; }
       h2 { font-size: 1.8rem; }
@@ -407,7 +370,6 @@
       .card { padding: 1.5rem; }
       .equation { font-size: 1.1rem; }
       .concept-grid { grid-template-columns: 1fr; }
-      .signature { font-size: 2rem; }
       .nav-tab { padding: 0.6rem 1.2rem; font-size: 0.9rem; }
     }
   </style>
@@ -424,12 +386,11 @@
       <div class="nav-tab" data-target="equation">Equação Fundamental</div>
       <div class="nav-tab" data-target="formalization">Formalização</div>
       <div class="nav-tab" data-target="predictions">Previsões</div>
-      <div class="nav-tab" data-target="research">Programa de Pesquisa</div>
     </div>
 
     <div class="section active" id="overview">
       <div class="card">
-        <h2>Resumo da Teoria Aprimorada</h2>
+        <h2>Resumo da Teoria</h2>
         <p>
           A <strong class="quantum">QGR-ONT</strong> (Ontologia Quântico-Gravitacional Relacional) é uma estrutura teórica unificada que formula a existência como emergente de relações fundamentais entre:
         </p>
@@ -475,15 +436,10 @@
             </div>
           </div>
         </div>
-        
-        <div class="signature-container">
-          <div class="signature">Antônio Cherubim</div>
-          <div class="author-title">Autor e Pesquisador Principal da QGR-ONT</div>
-        </div>
       </div>
 
       <div class="card">
-        <h2>Novos Fundamentos Matemáticos</h2>
+        <h2>Fundamentos Matemáticos</h2>
         
         <div class="pillar">
           <div class="pillar-icon">
@@ -534,7 +490,7 @@
 
     <div class="section" id="equation">
       <div class="card">
-        <h2>Equação Fundamental Aprimorada</h2>
+        <h2>Equação Fundamental</h2>
         
         <div class="mathjax-equation">
           \[
@@ -728,100 +684,11 @@
         </div>
       </div>
     </div>
-
-    <div class="section" id="research">
-      <div class="card">
-        <h2>Programa de Pesquisa</h2>
-        
-        <table>
-          <tr>
-            <th>Fase</th>
-            <th>Duração</th>
-            <th>Objetivos</th>
-            <th>Entregáveis</th>
-          </tr>
-          <tr>
-            <td><strong>Formalização</strong></td>
-            <td>6 meses</td>
-            <td>Rigor matemático completo</td>
-            <td>Artigo matemático</td>
-          </tr>
-          <tr>
-            <td><strong>Simulação</strong></td>
-            <td>12 meses</td>
-            <td>Modelagem computacional</td>
-            <td>Pacote Python/C++</td>
-          </tr>
-          <tr>
-            <td><strong>Testes</strong></td>
-            <td>18-24 meses</td>
-            <td>Proposta experimental</td>
-            <td>Artigos experimentais</td>
-          </tr>
-          <tr>
-            <td><strong>Teoria Final</strong></td>
-            <td>24-36 meses</td>
-            <td>Formulação completa</td>
-            <td>Monografia</td>
-          </tr>
-        </table>
-        
-        <h3><i class="fas fa-users"></i> Colaborações Essenciais</h3>
-        <div class="concept-grid">
-          <div class="concept-card">
-            <h4><i class="fas fa-square-root-variable"></i> Matemáticos</h4>
-            <p>Especialistas em geometria diferencial e análise funcional</p>
-          </div>
-          
-          <div class="concept-card">
-            <h4><i class="fas fa-atom"></i> Físicos Teóricos</h4>
-            <p>Gravitação quântica e QFT em espaço-tempo curvo</p>
-          </div>
-          
-          <div class="concept-card">
-            <h4><i class="fas fa-telescope"></i> Cosmólogos</h4>
-            <p>Análise de dados do CMB e estrutura em grande escala</p>
-          </div>
-          
-          <div class="concept-card">
-            <h4><i class="fas fa-microchip"></i> Cientistas Computacionais</h4>
-            <p>Desenvolvimento de simulações numéricas</p>
-          </div>
-        </div>
-        
-        <h3><i class="fas fa-laptop-code"></i> Implementação Computacional</h3>
-        <div class="math-container" style="font-family: 'Source Code Pro', monospace;">
-          <pre>
-import numpy as np
-from scipy.integrate import solve_ivp
-from qutip import *
-
-def qgr_ont_evolution(initial_state, H0, C_op, G_curv, t):
-    """
-    Resolve a dinâmica QGR-ONT
-    
-    Parâmetros:
-    initial_state: estado inicial (qutip.Qobj)
-    H0: Hamiltoniano livre (qutip.Qobj)
-    C_op: Operador de perspectiva cósmica (qutip.Qobj)
-    G_curv: Função de curvatura espaço-temporal (callable)
-    t: array de tempo
-    """
-    def dPdt(t, psi):
-        H_eff = H0 + G_curv(t) * C_op
-        return -1j * H_eff * psi
-    
-    result = solve_ivp(dPdt, [t[0], t[-1]], initial_state, t_eval=t)
-    return result.y</pre>
-        </div>
-      </div>
-    </div>
   </div>
 
   <div class="footer">
-    <p>QGR-ONT: Teoria Quântico-Gravitacional Relacional - Versão Aprimorada</p>
-    <p>Desenvolvido por Antônio Cherubim &copy; 2023</p>
-    <p>Contato: cherubim@qgr-ont.org</p>
+    <p>QGR-ONT: Teoria Quântico-Gravitacional Relacional - Versão Científica</p>
+    <p>&copy; 2023 - Todos os direitos reservados</p>
   </div>
 
   <div class="back-to-top">
